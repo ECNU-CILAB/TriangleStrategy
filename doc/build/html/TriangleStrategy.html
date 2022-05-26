@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TriangleStrategy package &mdash; TriangleStrategy 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="TriangleStrategy.Methods package" href="TriangleStrategy.Methods.html" />
+    <link rel="prev" title="Welcome to TriangleStrategy’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> TriangleStrategy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API Docs</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TriangleStrategy package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TriangleStrategy.Methods.html">TriangleStrategy.Methods package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-TriangleStrategy.Environment">TriangleStrategy.Environment module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-TriangleStrategy.ModelArchitecture">TriangleStrategy.ModelArchitecture module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-TriangleStrategy.TrainFunctions">TriangleStrategy.TrainFunctions module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">TriangleStrategy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>TriangleStrategy package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/TriangleStrategy.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="trianglestrategy-package">
+<h1>TriangleStrategy package<a class="headerlink" href="#trianglestrategy-package" title="Permalink to this headline"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="TriangleStrategy.Methods.html">TriangleStrategy.Methods package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TriangleStrategy.Methods.html#module-TriangleStrategy.Methods.A2C">TriangleStrategy.Methods.A2C module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TriangleStrategy.Methods.html#module-TriangleStrategy.Methods.DDPG">TriangleStrategy.Methods.DDPG module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TriangleStrategy.Methods.html#module-TriangleStrategy.Methods.DQN">TriangleStrategy.Methods.DQN module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TriangleStrategy.Methods.html#module-TriangleStrategy.Methods.DQNA">TriangleStrategy.Methods.DQNA module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TriangleStrategy.Methods.html#module-TriangleStrategy.Methods.OASS">TriangleStrategy.Methods.OASS module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TriangleStrategy.Methods.html#module-TriangleStrategy.Methods.PG">TriangleStrategy.Methods.PG module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TriangleStrategy.Methods.html#module-TriangleStrategy.Methods.PPO">TriangleStrategy.Methods.PPO module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="module-TriangleStrategy.Environment">
+<span id="trianglestrategy-environment-module"></span><h2>TriangleStrategy.Environment module<a class="headerlink" href="#module-TriangleStrategy.Environment" title="Permalink to this headline"></a></h2>
+<p>We provide an environment that is slightly different from most general-purpose learning frameworks. To improve performance, this environment computes rewards for the entire sequence, rather than by frequent interactions.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="TriangleStrategy.Environment.EnvX">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">TriangleStrategy.Environment.</span></span><span class="sig-name descname"><span class="pre">EnvX</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allow_continuous_action</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_price_diff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.Environment.EnvX" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Simulated profit environment</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>allow_continuous_action (bool): If <code class="docutils literal notranslate"><span class="pre">allow_continuous_action=True</span></code>, any action values within the range [-1,1] will be allowed. If <code class="docutils literal notranslate"><span class="pre">allow_continuous_action=False</span></code>, action values can only be -1, 0 or 1, additionally, the first and the last action value must be 0.
+use_price_diff (bool): If <code class="docutils literal notranslate"><span class="pre">use_price_diff=True</span></code>, the reward values represent the amount of change in the asset. If <code class="docutils literal notranslate"><span class="pre">use_price_diff=False</span></code>, the reward values represent the amount of change in the money (it doesn’t include the value of financial products).</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="TriangleStrategy.Environment.EnvX.simulate_trade">
+<span class="sig-name descname"><span class="pre">simulate_trade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position_signal_series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buy_price_series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sell_price_series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buy_cost_pct</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sell_cost_pct</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.Environment.EnvX.simulate_trade" title="Permalink to this definition"></a></dt>
+<dd><p>Simulate the trading process. In this function, we construct buy-sell behaviours according to <code class="docutils literal notranslate"><span class="pre">position_signal_series</span></code>. the agent will buy financial products if <code class="docutils literal notranslate"><span class="pre">position_signal_series[i]&gt;position_signal_series[i-1]</span></code> and sell financial products otherwise.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>position_signal_series (List or np.array): A series represents the position action.
+buy_price_series (List or np.array): A series represents the transaction price when the agent chooses to buy at the corresponding time step.
+sell_price_series (List or np.array): A series represents the transaction price when the agent chooses to sell at the corresponding time step.
+buy_cost_pct (float): The cost ratio when the agent chooses to buy.
+sell_cost_pct (float): The cost ratio when the agent chooses to sell.</p>
+</dd>
+<dt>Returns:</dt><dd><p>reward_series (List): The normalized reward value series.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-TriangleStrategy.ModelArchitecture">
+<span id="trianglestrategy-modelarchitecture-module"></span><h2>TriangleStrategy.ModelArchitecture module<a class="headerlink" href="#module-TriangleStrategy.ModelArchitecture" title="Permalink to this headline"></a></h2>
+<p>We provide some basic RNN structural neural network models as function estimators. The backbones of these models are all LSTM. For convenience, we use <code class="docutils literal notranslate"><span class="pre">input_size</span></code> to denote the dimension of environment state at one time step. The parameters <code class="docutils literal notranslate"><span class="pre">state_num</span></code> and <code class="docutils literal notranslate"><span class="pre">action_num</span></code> are set 3 by default and we don’t support other values now.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="TriangleStrategy.ModelArchitecture.ModelBeliel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">TriangleStrategy.ModelArchitecture.</span></span><span class="sig-name descname"><span class="pre">ModelBeliel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.ModelArchitecture.ModelBeliel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.Module</span></code></p>
+<p>A basic <strong>critic</strong> model for DDPG. This model contains a multilayer LSTM and a Fully connected layer. Similar to GAN, this critic model also takes the actor model’s output as input. The actual input dimension of this model is <code class="docutils literal notranslate"><span class="pre">input_size+1</span></code>.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>input_size (int): The dimension of environment state at one time step.
+hidden_size (int): The hidden_size in LSTM module.
+num_layers (int): The number of layer in LSTM module.
+dropout (int): The dropout probability of each layer except the last layer in LSTM module.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="TriangleStrategy.ModelArchitecture.ModelBeliel.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.ModelArchitecture.ModelBeliel.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward function.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>x (torch.tensor): A batch of sequencial environment states. The shape is <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">sequence_length,</span> <span class="pre">input_size)</span></code>.
+action (torch.tensor): The actor model’s output. The shape is <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">sequence_length,</span> <span class="pre">1)</span></code></p>
+</dd>
+<dt>Returns:</dt><dd><p>critic_value (torch.tensor): The model’s output. The shape is <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">sequence_length,</span> <span class="pre">1)</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="TriangleStrategy.ModelArchitecture.ModelGeed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">TriangleStrategy.ModelArchitecture.</span></span><span class="sig-name descname"><span class="pre">ModelGeed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.ModelArchitecture.ModelGeed" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.Module</span></code></p>
+<p>A basic <strong>actor</strong> model for DDPG. This model contains a multilayer LSTM and a Fully connected layer. Considering that DDPG is a method designed for continuous action space, this model directly outputs a continuous action value in the range (-1, 1).</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>input_size (int): The dimension of environment state at one time step.
+hidden_size (int): The hidden_size in LSTM module.
+num_layers (int): The number of layer in LSTM module.
+dropout (int): The dropout probability of each layer except the last layer in LSTM module.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="TriangleStrategy.ModelArchitecture.ModelGeed.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.ModelArchitecture.ModelGeed.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward function.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>x (torch.tensor): A batch of sequencial environment states. The shape is <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">sequence_length,</span> <span class="pre">input_size)</span></code>.</p>
+</dd>
+<dt>Returns:</dt><dd><p>action (torch.tensor): The model’s output. The shape is <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">sequence_length,</span> <span class="pre">1)</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="TriangleStrategy.ModelArchitecture.ModelGinga">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">TriangleStrategy.ModelArchitecture.</span></span><span class="sig-name descname"><span class="pre">ModelGinga</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.ModelArchitecture.ModelGinga" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.Module</span></code></p>
+<p>The basic model for DQN, ADQN, PG, PPO(actor), etc. This model contains a multilayer LSTM and a Fully connected layer. The position state will be encoded as a one-hot vector and concatenated to the input tensor, thus the actual input dimension of this model is <code class="docutils literal notranslate"><span class="pre">input_size+3</span></code>. The output dimension is <cite>3</cite>, which corresponds to the discrete action space ${-1, 0, 1}$.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>input_size (int): The dimension of environment state at one time step.
+state_num (int): The number of position states.
+action_num (int): The number of actions.
+hidden_size (int): The hidden_size in LSTM module.
+num_layers (int): The number of layer in LSTM module.
+dropout (int): The dropout probability of each layer except the last layer in LSTM module.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is no activation function (e.g., softmax function in PPO) on the last layer. You must implement it in <code class="docutils literal notranslate"><span class="pre">trainer</span></code> if you need.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="TriangleStrategy.ModelArchitecture.ModelGinga.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(None,</span> <span class="pre">None)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.ModelArchitecture.ModelGinga.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward function.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>input_data (torch.tensor): The environment state at one time step. <code class="docutils literal notranslate"><span class="pre">shape=(batch_size,</span> <span class="pre">1,</span> <span class="pre">input_size)</span></code>
+info ((torch.tensor, torch.tensor)): The hidden state of LSTM module at the last time step. It will be zero (at the first time step) if <code class="docutils literal notranslate"><span class="pre">info=(None,</span> <span class="pre">None)</span></code>.</p>
+</dd>
+<dt>Returns:</dt><dd><p>model_output, info (torch.tensor, (torch.tensor, torch.tensor)): <code class="docutils literal notranslate"><span class="pre">model_output</span></code> is the model’s output tensor. The shape of <code class="docutils literal notranslate"><span class="pre">model_output</span></code> is <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">1,</span> <span class="pre">action_num)</span></code>. <code class="docutils literal notranslate"><span class="pre">info=(h_n,</span> <span class="pre">c_n)</span></code> is the hidden state of LSTM module.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="TriangleStrategy.ModelArchitecture.ModelGingaStrium">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">TriangleStrategy.ModelArchitecture.</span></span><span class="sig-name descname"><span class="pre">ModelGingaStrium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.ModelArchitecture.ModelGingaStrium" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.Module</span></code></p>
+<p>The basic critic model for PPO(critic), etc. This model contains a multilayer LSTM and a Fully connected layer. The position state will be encoded as a one-hot vector and concatenated to the input tensor, thus the actual input dimension of this model is <code class="docutils literal notranslate"><span class="pre">input_size+3</span></code>. The output dimension is <cite>1</cite>.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>input_size (int): The dimension of environment state at one time step.
+state_num (int): The number of position states.
+hidden_size (int): The hidden_size in LSTM module.
+num_layers (int): The number of layer in LSTM module.
+dropout (int): The dropout probability of each layer except the last layer in LSTM module.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="TriangleStrategy.ModelArchitecture.ModelGingaStrium.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(None,</span> <span class="pre">None)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.ModelArchitecture.ModelGingaStrium.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward function.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>input_data (torch.tensor): The environment state at one time step. <code class="docutils literal notranslate"><span class="pre">shape=(batch_size,</span> <span class="pre">1,</span> <span class="pre">input_size)</span></code>
+info ((torch.tensor, torch.tensor)): The hidden state of LSTM module at the last time step. It will be zero (at the first time step) if <code class="docutils literal notranslate"><span class="pre">info=(None,</span> <span class="pre">None)</span></code>.</p>
+</dd>
+<dt>Returns:</dt><dd><p>model_output, info (torch.tensor, (torch.tensor, torch.tensor)): <code class="docutils literal notranslate"><span class="pre">model_output</span></code> is the model’s output tensor. The shape of <code class="docutils literal notranslate"><span class="pre">model_output</span></code> is <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">1,</span> <span class="pre">action_num)</span></code>. <code class="docutils literal notranslate"><span class="pre">info=(h_n,</span> <span class="pre">c_n)</span></code> is the hidden state of LSTM module.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="TriangleStrategy.ModelArchitecture.ModelGingaVictory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">TriangleStrategy.ModelArchitecture.</span></span><span class="sig-name descname"><span class="pre">ModelGingaVictory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.ModelArchitecture.ModelGingaVictory" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.Module</span></code></p>
+<p>A basic model designed for A2C methods. This model contains a multilayer LSTM and a Fully connected layer. The position state will be encoded as a one-hot vector and concatenated to the input tensor, thus the actual input dimension of this model is <code class="docutils literal notranslate"><span class="pre">input_size+3</span></code>. The output includes two parts, i.e., actor value and critic value. The dimensions are 3 and 1 respectively.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>input_size (int): The dimension of environment state at one time step.
+state_num (int): The number of position states.
+action_num (int): The number of actions.
+hidden_size (int): The hidden_size in LSTM module.
+num_layers (int): The number of layer in LSTM module.
+dropout (int): The dropout probability of each layer except the last layer in LSTM module.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The LSTM module is <strong>not</strong> shared by both the actor and the critic, which is the main difference between <code class="docutils literal notranslate"><span class="pre">ModelGingaVictory</span></code> and <code class="docutils literal notranslate"><span class="pre">ModelVictory</span></code></p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="TriangleStrategy.ModelArchitecture.ModelGingaVictory.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(None,</span> <span class="pre">None)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.ModelArchitecture.ModelGingaVictory.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward function.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>input_data (torch.tensor): The environment state at one time step. <code class="docutils literal notranslate"><span class="pre">shape=(batch_size,</span> <span class="pre">1,</span> <span class="pre">input_size)</span></code>
+info ((torch.tensor, torch.tensor)): The hidden state of LSTM module at the last time step. It will be zero (at the first time step) if <code class="docutils literal notranslate"><span class="pre">info=(None,</span> <span class="pre">None)</span></code>.</p>
+</dd>
+<dt>Returns:</dt><dd><p>model_output, info ((torch.tensor, torch.tensor), (torch.tensor, torch.tensor)): <code class="docutils literal notranslate"><span class="pre">model_output=(actor_value,</span> <span class="pre">critic_value)</span></code> is the model’s output tensor. The shape of <code class="docutils literal notranslate"><span class="pre">actor_value</span></code> is <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">1,</span> <span class="pre">action_num)</span></code>, and the shape of <code class="docutils literal notranslate"><span class="pre">critic_value</span></code> is <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">1,</span> <span class="pre">1)</span></code>. <code class="docutils literal notranslate"><span class="pre">info=(h_n,</span> <span class="pre">c_n)</span></code> is the hidden state of LSTM module.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="TriangleStrategy.ModelArchitecture.ModelOrb">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">TriangleStrategy.ModelArchitecture.</span></span><span class="sig-name descname"><span class="pre">ModelOrb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.ModelArchitecture.ModelOrb" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.Module</span></code></p>
+<p>A basic model for OASS. This model contains a multilayer LSTM and a Fully connected layer. This model only takes environment states as input. The output at each time step is a 9-dimensional vector, i.e., a 3x3 matrix.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>input_size (int): The dimension of environment state at one time step.
+hidden_size (int): The hidden_size in LSTM module.
+num_layers (int): The number of layer in LSTM module.
+dropout (int): The dropout probability of each layer except the last layer in LSTM module.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="TriangleStrategy.ModelArchitecture.ModelOrb.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.ModelArchitecture.ModelOrb.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward function.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>x (torch.tensor): A batch of sequencial environment states. The shape is <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">sequence_length,</span> <span class="pre">input_size)</span></code>.</p>
+</dd>
+<dt>Returns:</dt><dd><p>action_prob (torch.tensor): The model’s output. The shape is <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">sequence_length,</span> <span class="pre">9)</span></code>.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before you use the model’s output, you must reshape the 9-dimensional vector to a 3x3 matrix. <code class="docutils literal notranslate"><span class="pre">Softmax</span></code> function is supposed to apply to each row while training. Directly using <code class="docutils literal notranslate"><span class="pre">Argmax</span></code> function to select action while evaluating is ok.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="TriangleStrategy.ModelArchitecture.ModelVictory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">TriangleStrategy.ModelArchitecture.</span></span><span class="sig-name descname"><span class="pre">ModelVictory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.ModelArchitecture.ModelVictory" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.Module</span></code></p>
+<p>A basic model designed for A2C methods. This model contains a multilayer LSTM and a Fully connected layer. The position state will be encoded as a one-hot vector and concatenated to the input tensor, thus the actual input dimension of this model is <code class="docutils literal notranslate"><span class="pre">input_size+3</span></code>. The output includes two parts, i.e., actor value and critic value. The dimensions are 3 and 1 respectively.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>input_size (int): The dimension of environment state at one time step.
+state_num (int): The number of position states.
+action_num (int): The number of actions.
+hidden_size (int): The hidden_size in LSTM module.
+num_layers (int): The number of layer in LSTM module.
+dropout (int): The dropout probability of each layer except the last layer in LSTM module.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The LSTM module is shared by both the actor and the critic. But in our experiments, this architecture doesn’t work well. Another similar model, <code class="docutils literal notranslate"><span class="pre">ModelGingaVictory</span></code>, is recommended to replace this model.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="TriangleStrategy.ModelArchitecture.ModelVictory.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(None,</span> <span class="pre">None)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.ModelArchitecture.ModelVictory.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward function.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>input_data (torch.tensor): The environment state at one time step. <code class="docutils literal notranslate"><span class="pre">shape=(batch_size,</span> <span class="pre">1,</span> <span class="pre">input_size)</span></code>
+info ((torch.tensor, torch.tensor)): The hidden state of LSTM module at the last time step. It will be zero (at the first time step) if <code class="docutils literal notranslate"><span class="pre">info=(None,</span> <span class="pre">None)</span></code>.</p>
+</dd>
+<dt>Returns:</dt><dd><p>model_output, info ((torch.tensor, torch.tensor), (torch.tensor, torch.tensor)): <code class="docutils literal notranslate"><span class="pre">model_output=(actor_value,</span> <span class="pre">critic_value)</span></code> is the model’s output tensor. The shape of <code class="docutils literal notranslate"><span class="pre">actor_value</span></code> is <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">1,</span> <span class="pre">action_num)</span></code>, and the shape of <code class="docutils literal notranslate"><span class="pre">critic_value</span></code> is <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">1,</span> <span class="pre">1)</span></code>. <code class="docutils literal notranslate"><span class="pre">info=(h_n,</span> <span class="pre">c_n)</span></code> is the hidden state of LSTM module.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-TriangleStrategy.TrainFunctions">
+<span id="trianglestrategy-trainfunctions-module"></span><h2>TriangleStrategy.TrainFunctions module<a class="headerlink" href="#module-TriangleStrategy.TrainFunctions" title="Permalink to this headline"></a></h2>
+<p>These functions are helpful in the training process.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="TriangleStrategy.TrainFunctions.get_DataLoader">
+<span class="sig-prename descclassname"><span class="pre">TriangleStrategy.TrainFunctions.</span></span><span class="sig-name descname"><span class="pre">get_DataLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.TrainFunctions.get_DataLoader" title="Permalink to this definition"></a></dt>
+<dd><p>Wrapping a data set into data loader.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>data_path (str): The <code class="docutils literal notranslate"><span class="pre">.npz</span></code> data file path.
+batch_size (int): The <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> while training.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="TriangleStrategy.TrainFunctions.heuristic_train_model">
+<span class="sig-prename descclassname"><span class="pre">TriangleStrategy.TrainFunctions.</span></span><span class="sig-name descname"><span class="pre">heuristic_train_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_loader_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_loader_dev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_loader_test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trainer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_save_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.TrainFunctions.heuristic_train_model" title="Permalink to this definition"></a></dt>
+<dd><p>Train the model with curriculum learning. The <code class="docutils literal notranslate"><span class="pre">difficulty</span></code> (transaction cost) is set to 0 initially and then is increased linearly.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>model (torch.nn.Module): The neural network model.
+data_loader_train (torch.utils.data.DataLoader): The data loader which contains the <strong>train</strong> dataset.
+data_loader_dev (torch.utils.data.DataLoader): The data loader which contains the <strong>dev</strong> dataset.
+data_loader_test (torch.utils.data.DataLoader): The data loader which contains the <strong>test</strong> dataset.
+optimizer (torch.optim.Adam): The optimizer provided by PyTorch.
+trainer (object): The trainer of reinforcement learning methods.
+model_save_folder (str): The folder that models are saved to. Models will not be saved if <code class="docutils literal notranslate"><span class="pre">model_save_folder</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+steps (str): The steps while increasing the <code class="docutils literal notranslate"><span class="pre">difficulty</span></code>.
+kwargs (dict): Other parameters used in <code class="docutils literal notranslate"><span class="pre">trainer.train_epoch</span></code>, for example, <code class="docutils literal notranslate"><span class="pre">DecisionMaker</span></code>.</p>
+</dd>
+<dt>Returns:</dt><dd><p>save_path (str): Save path for the last model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="TriangleStrategy.TrainFunctions.quick_save">
+<span class="sig-prename descclassname"><span class="pre">TriangleStrategy.TrainFunctions.</span></span><span class="sig-name descname"><span class="pre">quick_save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.TrainFunctions.quick_save" title="Permalink to this definition"></a></dt>
+<dd><p>Quickly save a model.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>model (torch.nn.Module): The neural network model.
+save_path (str): Save path for the model. If <code class="docutils literal notranslate"><span class="pre">save_path</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, a folder will be created automatically.</p>
+</dd>
+<dt>Returns:</dt><dd><p>save_path (str): Save path for the model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="TriangleStrategy.TrainFunctions.train_model_until_converge">
+<span class="sig-prename descclassname"><span class="pre">TriangleStrategy.TrainFunctions.</span></span><span class="sig-name descname"><span class="pre">train_model_until_converge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_loader_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_loader_dev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_loader_test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trainer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch_window_win</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TriangleStrategy.TrainFunctions.train_model_until_converge" title="Permalink to this definition"></a></dt>
+<dd><p>Train a model until converge.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>model (torch.nn.Module): The neural network model.
+data_loader_train (torch.utils.data.DataLoader): The data loader which contains the <strong>train</strong> dataset.
+data_loader_dev (torch.utils.data.DataLoader): The data loader which contains the <strong>dev</strong> dataset.
+data_loader_test (torch.utils.data.DataLoader): The data loader which contains the <strong>test</strong> dataset.
+optimizer (torch.optim.Adam): The optimizer provided by PyTorch.
+trainer (object): The trainer of reinforcement learning methods.
+epoch_max (int): The parameter that for convergence determination. The training process will continue if the reward is increased in at least <code class="docutils literal notranslate"><span class="pre">epoch_window_win</span></code> epochs in the recent <code class="docutils literal notranslate"><span class="pre">epoch_window</span></code> epochs, and stop otherwise. If the model has been trained for <code class="docutils literal notranslate"><span class="pre">epoch_max</span></code> epochs, the peocess will also stop.
+epoch_window (int): The parameter that for convergence determination.
+epoch_window_win (int): The parameter that for convergence determination.
+kwargs (dict): Other parameters used in <code class="docutils literal notranslate"><span class="pre">trainer.train_epoch</span></code>, for example, <code class="docutils literal notranslate"><span class="pre">DecisionMaker</span></code>.</p>
+</dd>
+<dt>Returns:</dt><dd><p>reward_list (list): The reward value in every epoch.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to TriangleStrategy’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="TriangleStrategy.Methods.html" class="btn btn-neutral float-right" title="TriangleStrategy.Methods package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Artiprocher.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
