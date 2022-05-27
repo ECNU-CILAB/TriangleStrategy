@@ -1,4 +1,7 @@
 import TriangleStrategy
+import torch
+
+print(torch.__version__)
 
 # Configuration file for the Sphinx documentation builder.
 #
