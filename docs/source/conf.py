@@ -1,7 +1,5 @@
 import TriangleStrategy
-import torch
 
-print(torch.__version__)
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -31,7 +29,7 @@ release = '1.0.0'
 
 
 # -- General configuration ---------------------------------------------------
-autodoc_mock_imports = ['torch', 'numpy']
+# autodoc_mock_imports = ['torch', 'numpy']
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
