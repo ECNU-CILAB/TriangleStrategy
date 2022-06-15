@@ -34,7 +34,7 @@ TriangleStrategy is a high-efficiency reinforcement learning based algorithmic t
 
     `DQN-A <https://arxiv.org/pdf/1807.02787>`_
 
-    OASS (Our proposed method, coming sooooooooooon...)
+    OASS
 
 Note that OASS is based on another individual package ``oass``. Please refer to https://pypi.org/project/oass/.
 
